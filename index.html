@@ -8,23 +8,27 @@
     <link href="style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body>
-    <div class="container" id="container">
-        <div class="box" id="box">
+<body x-data="{ab: false, cr: false, cm: false, pr: false}">
+    <div id="container" class="flex flex-row justify-center mt-28">
+        <div id="box">
             <div class="card" id="front">
-                <p>About me</p>
+                <p x-on:click="ab = !ab, cr= false, cm= false, pr= false">About me</p>
             </div>
             <div class="card" id="back">
-                <p>Certificates</p>
+                <p x-on:click="cr = !cr, ab= false, cm= false, pr= false">Certificates</p>
             </div>
             <div class="card" id="left">
-                <p>Contact me</p>
+                <p x-on:click="cm = !cm, ab= false, pr= false, cr= false">Contact me</p>
             </div>
             <div class="card" id="right">
-                <p>Projects</p>
+                <p x-on:click="pr = !pr, cr= false, cm= false, ab= false">Projects</p>
             </div>
             <div class="card" id="top">
                 <p>Soon</p>
@@ -32,6 +36,41 @@
             <div class="card" id="bottom">
                 <p>Soon</p>
             </div>
+        </div>
+    </div>
+    <div class="flex flex-row justify-center mt-10">
+        <p x-show="ab"
+            class="text-[#393E46] text-center w-[400px] cursor-text transition duration-500 ease-in-out hover:text-white"
+            id="item">
+            I'm Moayad Almohammadi, a passionate full-stack web developer skilled in front-end and back-end development.
+            I enjoy creating user-friendly interfaces and robust applications.
+        </p>
+        <div x-show="cm" class="text-[#393E46] text-center grid grid-cols-1 justify-items-center">
+            <ul class="list-none">
+                <li class="transition duration-500 ease-in-out hover:text-white cursor-pointer">
+                    Email</li>
+                <li class="transition duration-500 ease-in-out hover:text-white cursor-pointer">Linkedin</li>
+            </ul>
+        </div>
+        <div x-show="cr" class="text-[#393E46] text-center grid grid-cols-1 justify-items-center">
+            <ul class="list-disc">
+                <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example example
+                </li>
+                <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example example
+                </li>
+                <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example example
+                </li>
+            </ul>
+        </div>
+        <div x-show="pr" class="text-[#393E46] text-center grid grid-cols-1 justify-items-center">
+            <ul class="list-disc">
+                <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example example
+                </li>
+                <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example example
+                </li>
+                <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example example
+                </li>
+            </ul>
         </div>
     </div>
     <script src="script.js"></script>

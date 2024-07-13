@@ -1,36 +1,27 @@
 * {
-    background: #03001C;
-    font-family: "Comfortaa", sans-serif;
+    background: #000;
+    font-family: "Space Grotesk", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
 }
 
-.container {
-    position: absolute;
-    height: 60vh;
-    width: 30vw;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
+#container {
     perspective: 1000px;
 }
 
-.box {
-    height: 250px;
-    width: 250px;
-    position: absolute;
-    top: 100px;
-    left: 100px;
+#box {
+    height: 100px;
+    width: 100px;
     transform-style: preserve-3d;
-    transform: rotateX(10deg) rotateY(130deg);
+    transform: rotateX(15deg) rotateY(50deg);
 }
 
 .card {
-    height: 250px;
-    width: 250px;
-    border: 2px solid #301E67;
-    color: white;
+    height: 100px;
+    width: 100px;
+    border: 1px solid #393E46;
+    color: #393E46;
     position: absolute;
     box-sizing: border-box;
     user-select: none;
@@ -44,34 +35,40 @@
     text-align: center;
     backface-visibility: hidden;
     /* Prevent text from being inverted */
+    font-size: 12px;
+    transition: 0.5s;
+}
+
+.card:hover {
+    color: white;
 }
 
 #front {
-    transform: translateZ(125px);
+    transform: translateZ(50px);
 }
 
 #back {
-    transform: translateZ(-125px) rotateY(180deg);
+    transform: translateZ(-50px) rotateY(180deg);
     /* Rotate the back face to correct its orientation */
 }
 
 #left {
-    right: 125px;
+    right: 50px;
     transform: rotateY(-90deg);
 }
 
 #right {
-    left: 125px;
+    left: 50px;
     transform: rotateY(90deg);
 }
 
 #top {
-    bottom: 125px;
+    bottom: 50px;
     transform: rotateX(90deg);
 }
 
 #bottom {
-    top: 125px;
+    top: 50px;
     transform: rotateX(-90deg);
 }
 
@@ -82,4 +79,8 @@ img {
     -ms-user-select: none;
     pointer-events: none;
     color: white;
+}
+
+p {
+    cursor: pointer;
 }

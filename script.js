@@ -28,12 +28,20 @@ document.addEventListener("DOMContentLoaded", function () {
     rotateX -= diffY / 2; // scale down the rotation speed
     rotateY += diffX / 2; // scale down the rotation speed
 
-    // Limit rotation to within -180 to 180 degrees for both X-axis and Y-axis
-    rotateX = Math.max(-180, Math.min(180, rotateX));
-    rotateY = Math.max(-180, Math.min(180, rotateY));
+    // Limit rotation to within -90 to 90 degrees for X-axis
+    rotateX = Math.max(-90, Math.min(90, rotateX));
+
+    // Limit rotation to within 0 to 180 degrees for Y-axis
+    rotateY = Math.max(0, Math.min(360, rotateY));
 
     box.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     startX = e.clientX;
     startY = e.clientY;
+  }
+  function aboutMeHandler() {
+    ab = !ab;
+    cr = false;
+    cm = false;
+    pr = false;
   }
 });
