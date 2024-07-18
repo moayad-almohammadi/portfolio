@@ -15,63 +15,69 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body x-data="{ab: false, cr: false, cm: false, pr: false}">
-    <div id="container" class="flex flex-row justify-center mt-28">
-        <div id="box">
-            <div class="card" id="front">
-                <p x-on:click="ab = !ab, cr= false, cm= false, pr= false">About me</p>
+<body>
+    <div x-data="{ab: true, cr: false, cm: false, pr: false}" class="">
+        <section id="container" class="flex flex-row justify-center mt-28">
+            <div id="box" class="">
+                <div class="card text-[0.8rem]" id="front">
+                    <p class="cursor-pointer" x-on:click="ab = !ab, cr= false, cm= false, pr= false">Home</p>
+                </div>
+                <div class="card text-[0.8rem]" id="back">
+                    <p x-on:click="cr = !cr, ab= false, cm= false, pr= false">Certificates</p>
+                </div>
+                <div class="card text-[0.8rem]" id="left">
+                    <p>Soon</p>
+                </div>
+                <div class="card text-[0.8rem]" id="right">
+                    <p class="cursor-pointer" x-on:click="pr = !pr, cr= false, cm= false, ab= false">Projects</p>
+                </div>
+                <div class="card text-[0.8rem]" id="top">
+                    <p>Soon</p>
+                </div>
+                <div class="card text-[0.8rem]" id="bottom">
+                    <p>Soon</p>
+                </div>
             </div>
-            <div class="card" id="back">
-                <p x-on:click="cr = !cr, ab= false, cm= false, pr= false">Certificates</p>
+        </section>
+        <section class="flex flex-row justify-center mt-20">
+            <p x-show="ab"
+                class="text-[#393E46] text-center w-[600px] cursor-text text-sm transition duration-500 ease-in-out hover:text-white border-[0.5px] border-[#393E46] p-5"
+                id="item">
+                I'm Moayad Almohammadi, a passionate full-stack web developer skilled in front-end and back-end
+                development.
+                I enjoy creating user-friendly interfaces and robust applications.
+            </p>
+            <div x-show="cr"
+                class="text-[#393E46] grid grid-cols-1 text-left justify-items-center border-[0.5px] border-[#393E46] p-5 w-[600px] text-sm">
+                <ul class="list-disc">
+                    <li class="transition duration-500 ease-in-out hover:text-white cursor-default">COBIT® 5 Foundation
+                        Certificate
+                    </li>
+                    <li class="transition duration-500 ease-in-out hover:text-white cursor-default">Programming in SAP
+                        S/4HANA for SAP NetWeaver ABAP Programmers
+                    </li>
+                    <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example
+                        example
+                    </li>
+                </ul>
             </div>
-            <div class="card" id="left">
-                <p x-on:click="cm = !cm, ab= false, pr= false, cr= false">Contact me</p>
+            <div x-show="pr"
+                class="text-[#393E46] grid grid-cols-1 text-left justify-items-center border-[0.5px] border-[#393E46] p-5 w-[600px] text-sm">
+                <ul class="list-disc">
+                    <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example
+                        example example example
+                        example
+
+                    </li>
+                    <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example
+                        example
+                    </li>
+                    <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example
+                        example
+                    </li>
+                </ul>
             </div>
-            <div class="card" id="right">
-                <p x-on:click="pr = !pr, cr= false, cm= false, ab= false">Projects</p>
-            </div>
-            <div class="card" id="top">
-                <p>Soon</p>
-            </div>
-            <div class="card" id="bottom">
-                <p>Soon</p>
-            </div>
-        </div>
-    </div>
-    <div class="flex flex-row justify-center mt-10">
-        <p x-show="ab"
-            class="text-[#393E46] text-center w-[400px] cursor-text transition duration-500 ease-in-out hover:text-white"
-            id="item">
-            I'm Moayad Almohammadi, a passionate full-stack web developer skilled in front-end and back-end development.
-            I enjoy creating user-friendly interfaces and robust applications.
-        </p>
-        <div x-show="cm" class="text-[#393E46] text-center grid grid-cols-1 justify-items-center">
-            <ul class="list-none">
-                <li class="transition duration-500 ease-in-out hover:text-white cursor-pointer">
-                    Email</li>
-                <li class="transition duration-500 ease-in-out hover:text-white cursor-pointer">Linkedin</li>
-            </ul>
-        </div>
-        <div x-show="cr" class="text-[#393E46] text-center grid grid-cols-1 justify-items-center">
-            <ul class="list-disc">
-                <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example example
-                </li>
-                <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example example
-                </li>
-                <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example example
-                </li>
-            </ul>
-        </div>
-        <div x-show="pr" class="text-[#393E46] text-center grid grid-cols-1 justify-items-center">
-            <ul class="list-disc">
-                <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example example
-                </li>
-                <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example example
-                </li>
-                <li class="transition duration-500 ease-in-out hover:text-white cursor-default">example example example
-                </li>
-            </ul>
-        </div>
+        </section>
     </div>
     <script src="script.js"></script>
 </body>
